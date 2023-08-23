@@ -1,0 +1,47 @@
+body{
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    fill-opacity: 0.5;
+}
+.img-logo{
+    width: 250px;
+    height: 50px;
+    margin: 5px;
+}
+.a-custom-header{
+    text-decoration: none;
+    color: #3f51b5;
+}
+.a-custom-header:hover{
+    color: red;
+}
+.footer-custom{
+    margin-top: 15px;
+}
+.slide-custom{
+    height: 200px;
+}
+.introduce-home{
+    margin-bottom: 50px;
+}
+.introduce-home2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card .tabs .tab a{
+    color: #3f51b5;
+} /*Black color to the text*/
+
+.card .tabs .tab a:hover {
+    background-color:#fdfdfffd;
+    color: #3f51b5;
+} /*Text color on hover*/
+
+.card .tabs .tab a.active {
+    background-color:#f6f6f6f5;
+    color: #3f51b5;
+} /*Background and text color when a tab is active*/
+
+.card .tabs .indicator {
+    background-color: #3f51b5;
+} /*Color of underline*/

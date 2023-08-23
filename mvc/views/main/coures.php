@@ -4,7 +4,7 @@
         <?php
         foreach ($data['coures'] as $khoahoc) {
         ?>
-            <div class="col s2 m4">
+            <a class="col s2 m4" href="/Nienluancoso/home/couresdetail/<?php echo $khoahoc['id']; ?>">
                 <div class="card">
                     <div class="card-image">
                         <img src="http://localhost/Nienluancoso/public/img/slide1.jpg">
@@ -15,7 +15,7 @@
                         <h6 class="red-text text-darken-2">Học phí: <?php echo $khoahoc['hocphi']; ?></h6>
                     </div>
                 </div>
-            </div>
+            </a>
 
         <?php
         }

@@ -30,7 +30,7 @@
         </nav>
         <ul class="sidenav grey lighten-5" id="mobile-demo">
             <li class="<?php if ($data['title'] == 'Trang chủ') echo "active"; ?>"><a href="/Nienluancoso/home/index">Trang chủ</a></li>
-            <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a href="#">Khóa học</a></li>
+            <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a href="/Nienluancoso/home/coures">Khóa học</a></li>
             <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a href="#">Lịch học</a></li>
             <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a href="#">Liên hệ</a></li>
         </ul>
@@ -53,7 +53,7 @@
                     <h5 class="indigo-text text-darken-4"><b>Về OCEAN</b></h5>
                     <ul>
                         <li><a class="a-custom-header" href="/Nienluancoso/home/index">Trang chủ</a></li>
-                        <li><a class="a-custom-header" href="#!">Khóa học</a></li>
+                        <li><a class="a-custom-header" href="/Nienluancoso/home/coures">Khóa học</a></li>
                         <li><a class="a-custom-header" href="#!">Lịch học</a></li>
                         <li><a class="a-custom-header" href="#!">Liên hệ</a></li>
                     </ul>

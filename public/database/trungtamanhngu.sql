@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 23, 2023 lúc 06:05 AM
+-- Thời gian đã tạo: Th9 02, 2023 lúc 09:41 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bangcap` (
-  `id` int(11) NOT NULL,
+  `idbangcap` int(11) NOT NULL,
   `capdo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -36,7 +36,7 @@ CREATE TABLE `bangcap` (
 -- Đang đổ dữ liệu cho bảng `bangcap`
 --
 
-INSERT INTO `bangcap` (`id`, `capdo`) VALUES
+INSERT INTO `bangcap` (`idbangcap`, `capdo`) VALUES
 (1, 'TKT'),
 (2, 'TEFL'),
 (3, 'CELTA'),
@@ -51,7 +51,7 @@ INSERT INTO `bangcap` (`id`, `capdo`) VALUES
 --
 
 CREATE TABLE `chitietlophoc` (
-  `id` int(11) NOT NULL,
+  `idchitiet` int(11) NOT NULL,
   `idlop` int(11) NOT NULL,
   `idkhoahoc` int(11) NOT NULL,
   `siso` int(11) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `chitietlophoc` (
 -- Đang đổ dữ liệu cho bảng `chitietlophoc`
 --
 
-INSERT INTO `chitietlophoc` (`id`, `idlop`, `idkhoahoc`, `siso`, `conlai`) VALUES
+INSERT INTO `chitietlophoc` (`idchitiet`, `idlop`, `idkhoahoc`, `siso`, `conlai`) VALUES
 (1, 1, 1, 20, 20),
 (2, 2, 2, 20, 20),
 (3, 3, 3, 20, 20),
@@ -77,7 +77,7 @@ INSERT INTO `chitietlophoc` (`id`, `idlop`, `idkhoahoc`, `siso`, `conlai`) VALUE
 --
 
 CREATE TABLE `chungchi` (
-  `id` int(11) NOT NULL,
+  `idchungchi` int(11) NOT NULL,
   `chungchi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -85,7 +85,7 @@ CREATE TABLE `chungchi` (
 -- Đang đổ dữ liệu cho bảng `chungchi`
 --
 
-INSERT INTO `chungchi` (`id`, `chungchi`) VALUES
+INSERT INTO `chungchi` (`idchungchi`, `chungchi`) VALUES
 (1, 'IELTS'),
 (2, 'TOEIC'),
 (3, 'CEFR-B1'),
@@ -100,7 +100,7 @@ INSERT INTO `chungchi` (`id`, `chungchi`) VALUES
 --
 
 CREATE TABLE `giaovien` (
-  `id` int(11) NOT NULL,
+  `idgv` int(11) NOT NULL,
   `ten` varchar(50) NOT NULL,
   `ngaysinh` date NOT NULL,
   `diachi` varchar(100) NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE `giaovien` (
 -- Đang đổ dữ liệu cho bảng `giaovien`
 --
 
-INSERT INTO `giaovien` (`id`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`, `bangcap`) VALUES
+INSERT INTO `giaovien` (`idgv`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`, `bangcap`) VALUES
 (1, 'Trần Văn Trung', '1975-09-20', 'Cần Thơ', 'trung345@gmail.com', '0235416587', 4),
 (2, 'Nguyễn Trọng Tính', '1978-11-02', 'Hậu Giang', 'tinh678@gmail.com', '0546128756', 1),
 (3, 'Trần Văn Thanh', '1975-09-20', 'Cần Thơ', 'thanh345@gmail.com', '0235416894', 6),
@@ -130,7 +130,7 @@ INSERT INTO `giaovien` (`id`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`, `bang
 --
 
 CREATE TABLE `hocvien` (
-  `id` int(11) NOT NULL,
+  `idhv` int(11) NOT NULL,
   `ten` varchar(50) NOT NULL,
   `ngaysinh` date NOT NULL,
   `diachi` varchar(100) NOT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE `hocvien` (
 -- Đang đổ dữ liệu cho bảng `hocvien`
 --
 
-INSERT INTO `hocvien` (`id`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALUES
+INSERT INTO `hocvien` (`idhv`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALUES
 (1, 'Trần Thanh Mới', '2001-09-20', 'Cần Thơ', 'thanhmoivip123456@gmail.com', '0854172887'),
 (2, 'Trần Văn Trung', '2001-09-20', 'Cần thơ', 'trungb343565654@gmail.com', '0854172887'),
 (3, 'Trần Trung Quang', '2001-09-20', 'Cần Thơ', 'quang123456@gmail.com', '0854172564'),
@@ -150,7 +150,13 @@ INSERT INTO `hocvien` (`id`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALUES
 (5, 'Trần Thanh Tâm', '2001-09-20', 'Cần Thơ', 'tamvip123456@gmail.com', '0854172875'),
 (6, 'Trần Văn Tính', '2001-09-20', 'Cần thơ', 'tinhsub343565654@gmail.com', '0854172564'),
 (7, 'Trần Trung Quân', '2001-09-20', 'Cần Thơ', 'quan123456@gmail.com', '0854172872'),
-(8, 'Trần Văn Nguyên', '2001-09-20', 'Cần thơ', 'nguyenb343565654@gmail.com', '0854894893');
+(8, 'Trần Văn Nguyên', '2001-09-20', 'Cần thơ', 'nguyenb343565654@gmail.com', '0854894893'),
+(9, 'tra thanh moi', '0000-00-00', 'cantho', '123', '123'),
+(10, 'tra thanh moi', '2020-08-08', 'cantho', '123', '123'),
+(11, 'tran thanh moi', '2023-08-21', 'ca mau', 'thanh@gmail.com', '087451254'),
+(12, 'tran thanh moi', '2023-08-21', 'ca mau', 'thanh@gmail.com', '087451254'),
+(13, 'tran thanh moi', '2023-08-01', 'ca mau', 'thanh@gmail.com', '0854172887'),
+(14, 'Tran hai dang', '2023-08-01', 'ca mau', 'dang@gmail.com', '0984564214');
 
 -- --------------------------------------------------------
 
@@ -159,8 +165,9 @@ INSERT INTO `hocvien` (`id`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALUES
 --
 
 CREATE TABLE `khoahoc` (
-  `id` int(11) NOT NULL,
+  `idkhoahoc` int(11) NOT NULL,
   `tenkh` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `chitiet` text NOT NULL,
   `chungchi` int(11) NOT NULL,
   `nhom` int(11) NOT NULL
@@ -170,13 +177,13 @@ CREATE TABLE `khoahoc` (
 -- Đang đổ dữ liệu cho bảng `khoahoc`
 --
 
-INSERT INTO `khoahoc` (`id`, `tenkh`, `chitiet`, `chungchi`, `nhom`) VALUES
-(1, 'Khóa 1', '', 1, 1),
-(2, 'Khóa 2', '', 2, 1),
-(3, 'Khóa 3', '', 3, 2),
-(4, 'Khóa 4', '', 4, 2),
-(5, 'Khóa 5', '', 5, 1),
-(6, 'Khóa 6', '', 6, 1);
+INSERT INTO `khoahoc` (`idkhoahoc`, `tenkh`, `image`, `chitiet`, `chungchi`, `nhom`) VALUES
+(1, 'Khóa 1', '', '', 1, 1),
+(2, 'Khóa 2', '', '', 2, 1),
+(3, 'Khóa 3', '', '', 3, 2),
+(4, 'Khóa 4', '', '', 4, 2),
+(5, 'Khóa 5', '', '', 5, 1),
+(6, 'Khóa 6', '', '', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -216,7 +223,7 @@ INSERT INTO `lichhoc` (`idlop`, `thu`, `giohoc`, `idphong`) VALUES
 --
 
 CREATE TABLE `lop` (
-  `id` int(11) NOT NULL,
+  `idlop` int(11) NOT NULL,
   `tenlop` varchar(50) NOT NULL,
   `batdau` date NOT NULL,
   `ketthuc` date NOT NULL,
@@ -229,7 +236,7 @@ CREATE TABLE `lop` (
 -- Đang đổ dữ liệu cho bảng `lop`
 --
 
-INSERT INTO `lop` (`id`, `tenlop`, `batdau`, `ketthuc`, `giaovien`, `khoahoc`, `hocphi`) VALUES
+INSERT INTO `lop` (`idlop`, `tenlop`, `batdau`, `ketthuc`, `giaovien`, `khoahoc`, `hocphi`) VALUES
 (1, 'Lớp 1', '2023-08-12', '2023-11-20', 6, 1, '5.000.000 VND'),
 (2, 'Lớp 2', '2023-08-12', '2023-11-20', 8, 2, '5.000.000 VND'),
 (3, 'Lớp 3', '2023-08-12', '2023-11-20', 5, 3, '5.000.000 VND'),
@@ -334,7 +341,9 @@ INSERT INTO `tkhocvien` (`id`, `idhv`, `username`, `pass`) VALUES
 (5, 7, 'quan123', 'quan123'),
 (6, 8, 'nguyen123', 'nguyen123'),
 (7, 2, 'trung123', 'trung123'),
-(8, 6, 'tinh123', 'tinh123');
+(8, 6, 'tinh123', 'tinh123'),
+(9, 13, 'moita', 'moi123'),
+(10, 14, 'moiddk46', 'moi123');
 
 -- --------------------------------------------------------
 
@@ -367,13 +376,13 @@ INSERT INTO `tuan` (`id`, `thu`) VALUES
 -- Chỉ mục cho bảng `bangcap`
 --
 ALTER TABLE `bangcap`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idbangcap`);
 
 --
 -- Chỉ mục cho bảng `chitietlophoc`
 --
 ALTER TABLE `chitietlophoc`
-  ADD PRIMARY KEY (`id`,`idlop`,`idkhoahoc`),
+  ADD PRIMARY KEY (`idchitiet`,`idlop`,`idkhoahoc`),
   ADD KEY `idlop` (`idlop`),
   ADD KEY `idkhoahoc` (`idkhoahoc`);
 
@@ -381,26 +390,26 @@ ALTER TABLE `chitietlophoc`
 -- Chỉ mục cho bảng `chungchi`
 --
 ALTER TABLE `chungchi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idchungchi`);
 
 --
 -- Chỉ mục cho bảng `giaovien`
 --
 ALTER TABLE `giaovien`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`idgv`),
   ADD KEY `bangcap` (`bangcap`);
 
 --
 -- Chỉ mục cho bảng `hocvien`
 --
 ALTER TABLE `hocvien`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idhv`);
 
 --
 -- Chỉ mục cho bảng `khoahoc`
 --
 ALTER TABLE `khoahoc`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`idkhoahoc`),
   ADD KEY `chungchi` (`chungchi`),
   ADD KEY `nhom` (`nhom`);
 
@@ -416,7 +425,7 @@ ALTER TABLE `lichhoc`
 -- Chỉ mục cho bảng `lop`
 --
 ALTER TABLE `lop`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`idlop`),
   ADD KEY `khoahoc` (`khoahoc`),
   ADD KEY `giaovien` (`giaovien`);
 
@@ -460,43 +469,43 @@ ALTER TABLE `tuan`
 -- AUTO_INCREMENT cho bảng `bangcap`
 --
 ALTER TABLE `bangcap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idbangcap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietlophoc`
 --
 ALTER TABLE `chitietlophoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idchitiet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `chungchi`
 --
 ALTER TABLE `chungchi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idchungchi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `giaovien`
 --
 ALTER TABLE `giaovien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idgv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `hocvien`
 --
 ALTER TABLE `hocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idhv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
 --
 ALTER TABLE `khoahoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idkhoahoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `lop`
 --
 ALTER TABLE `lop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idlop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `nhom`
@@ -520,7 +529,7 @@ ALTER TABLE `tkgiaovien`
 -- AUTO_INCREMENT cho bảng `tkhocvien`
 --
 ALTER TABLE `tkhocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `tuan`
@@ -536,20 +545,20 @@ ALTER TABLE `tuan`
 -- Các ràng buộc cho bảng `chitietlophoc`
 --
 ALTER TABLE `chitietlophoc`
-  ADD CONSTRAINT `chitietlophoc_ibfk_1` FOREIGN KEY (`idlop`) REFERENCES `lop` (`id`),
-  ADD CONSTRAINT `chitietlophoc_ibfk_2` FOREIGN KEY (`idkhoahoc`) REFERENCES `khoahoc` (`id`);
+  ADD CONSTRAINT `chitietlophoc_ibfk_1` FOREIGN KEY (`idlop`) REFERENCES `lop` (`idlop`),
+  ADD CONSTRAINT `chitietlophoc_ibfk_2` FOREIGN KEY (`idkhoahoc`) REFERENCES `khoahoc` (`idkhoahoc`);
 
 --
 -- Các ràng buộc cho bảng `giaovien`
 --
 ALTER TABLE `giaovien`
-  ADD CONSTRAINT `giaovien_ibfk_1` FOREIGN KEY (`bangcap`) REFERENCES `bangcap` (`id`);
+  ADD CONSTRAINT `giaovien_ibfk_1` FOREIGN KEY (`bangcap`) REFERENCES `bangcap` (`idbangcap`);
 
 --
 -- Các ràng buộc cho bảng `khoahoc`
 --
 ALTER TABLE `khoahoc`
-  ADD CONSTRAINT `khoahoc_ibfk_1` FOREIGN KEY (`chungchi`) REFERENCES `chungchi` (`id`),
+  ADD CONSTRAINT `khoahoc_ibfk_1` FOREIGN KEY (`chungchi`) REFERENCES `chungchi` (`idchungchi`),
   ADD CONSTRAINT `khoahoc_ibfk_2` FOREIGN KEY (`nhom`) REFERENCES `nhom` (`id`);
 
 --
@@ -557,27 +566,27 @@ ALTER TABLE `khoahoc`
 --
 ALTER TABLE `lichhoc`
   ADD CONSTRAINT `lichhoc_ibfk_1` FOREIGN KEY (`thu`) REFERENCES `tuan` (`id`),
-  ADD CONSTRAINT `lichhoc_ibfk_2` FOREIGN KEY (`idlop`) REFERENCES `lop` (`id`),
+  ADD CONSTRAINT `lichhoc_ibfk_2` FOREIGN KEY (`idlop`) REFERENCES `lop` (`idlop`),
   ADD CONSTRAINT `lichhoc_ibfk_3` FOREIGN KEY (`idphong`) REFERENCES `phong` (`id`);
 
 --
 -- Các ràng buộc cho bảng `lop`
 --
 ALTER TABLE `lop`
-  ADD CONSTRAINT `lop_ibfk_1` FOREIGN KEY (`khoahoc`) REFERENCES `khoahoc` (`id`),
-  ADD CONSTRAINT `lop_ibfk_2` FOREIGN KEY (`giaovien`) REFERENCES `giaovien` (`id`);
+  ADD CONSTRAINT `lop_ibfk_1` FOREIGN KEY (`khoahoc`) REFERENCES `khoahoc` (`idkhoahoc`),
+  ADD CONSTRAINT `lop_ibfk_2` FOREIGN KEY (`giaovien`) REFERENCES `giaovien` (`idgv`);
 
 --
 -- Các ràng buộc cho bảng `tkgiaovien`
 --
 ALTER TABLE `tkgiaovien`
-  ADD CONSTRAINT `tkgiaovien_ibfk_1` FOREIGN KEY (`idgv`) REFERENCES `giaovien` (`id`);
+  ADD CONSTRAINT `tkgiaovien_ibfk_1` FOREIGN KEY (`idgv`) REFERENCES `giaovien` (`idgv`);
 
 --
 -- Các ràng buộc cho bảng `tkhocvien`
 --
 ALTER TABLE `tkhocvien`
-  ADD CONSTRAINT `tkhocvien_ibfk_1` FOREIGN KEY (`idhv`) REFERENCES `hocvien` (`id`);
+  ADD CONSTRAINT `tkhocvien_ibfk_1` FOREIGN KEY (`idhv`) REFERENCES `hocvien` (`idhv`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

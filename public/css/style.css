@@ -1,6 +1,5 @@
 body{
     background-image: url(../img/background.png);
-    background-repeat: no-repeat;
     fill-opacity: 0.5;
 }
 .img-logo{
@@ -45,3 +44,56 @@ body{
 .card .tabs .indicator {
     background-color: #3f51b5;
 } /*Color of underline*/
+.img-student-gv{
+    max-width: 400px;
+    height: 300px;
+    border-radius: 5px;
+}
+.content-student-gv{
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.content-student-cs{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.form-custom{
+    max-width: 350px;
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.alert-custom{
+    margin-top: 100px;
+    max-width: 350px;
+}
+.alert-custom-register{
+    margin-top: 100px;
+}
+.alert{
+    animation: alert;
+    animation-duration: 1s;
+}
+@keyframes alert{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.button-dangky{
+    margin-top: 15px;
+}
+.form-custom-register{
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.or-custom{
+    margin-top: 30px;
+}

@@ -22,9 +22,28 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
                 <ul id="nav-mobile" class=" right hide-on-med-and-down">
                     <li class="<?php if ($data['title'] == 'Trang chủ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/home/index"><b>Trang chủ</b></a></li>
-                    <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/home/coures"><b>Khóa học</b></a></li>
-                    <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="#"><b>Lịch học</b></a></li>
+                    <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/coures/coures"><b>Khóa học</b></a></li>
+                    <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/schedule/couresschedule"><b>Lịch học</b></a></li>
                     <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="#"><b>Liên hệ</b></a></li>
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                    ?>
+                        <li><a class="waves-effect waves-light btn indigo dropdown-trigger" data-target="dropdown1"><i class="material-icons center">portrait</i></a></li>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content row'>
+                            <li><a class="indigo-text" href="#!">Thông tin tài khoản</a></li>
+                            <li><a class="indigo-text" href="#!">Xóa tài khoản</a></li>
+                            <li><a class="indigo-text" href="/Nienluancoso/login/logout">Đăng xuất</a></li>
+                        </ul>
+                    <?php
+                    } else {
+                    ?>
+                        <li><a class="waves-effect waves-light btn indigo" href="/Nienluancoso/login/index"><i class="material-icons center">login</i></a></li>
+                    <?php
+                    }
+                    ?>
+
                 </ul>
             </div>
         </nav>
@@ -37,9 +56,9 @@
         <!-- </div> -->
     </header>
     <main class="container">
-            <?php
-            require_once("./mvc/views/{$data['layout']}.php")
-            ?>
+        <?php
+        require_once("./mvc/views/{$data['layout']}.php")
+        ?>
     </main>
     <footer class="page-footer grey lighten-5">
         <div class="container">

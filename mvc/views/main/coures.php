@@ -4,7 +4,7 @@
         <?php
         foreach ($data['coures'] as $khoahoc) {
         ?>
-            <a class="col s2 m4" href="/Nienluancoso/coures/couresdetail/<?php echo $khoahoc['id']; ?>">
+            <a class="col s2 m4" href="/Nienluancoso/coures/couresdetail/<?php echo $khoahoc['idkhoahoc']; ?>">
                 <div class="card">
                     <div class="card-image">
                         <img src="http://localhost/Nienluancoso/public/img/slide1.jpg">

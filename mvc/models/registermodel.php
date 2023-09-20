@@ -44,7 +44,7 @@ class registermodel extends connect
                 $query2="INSERT INTO tkhocvien(`idhv`,`username`,`pass`) VALUES (?,?,?)";
                 $sth2= $this->pdo->prepare($query2);
                 $sth2->execute([
-                    $hocvien['id'],
+                    $hocvien['idhv'],
                     $username,
                     $password
                 ]);

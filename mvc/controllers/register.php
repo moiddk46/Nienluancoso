@@ -21,9 +21,10 @@ class register extends Controller
             // $password = $_POST['password'];
             if ($this->model("registermodel")->checkbeforeinsert($_POST['username']) == 0) {
                 if ($this->model("registermodel")->addtk($_POST['username'], $_POST['hoten'], $_POST['ngaysinh'], $_POST['diachi'],  $_POST['email'], $_POST['phone'], $_POST['password']) == true) {
-                    $this->data['title'] = "Đăng nhập";
-                    $this->data['layout'] = "main/login";
-                    $this->view("masterlayout/log", $this->data);
+                    // $this->data['title'] = "Đăng nhập";
+                    // $this->data['layout'] = "main/login";
+                    header("location: http://localhost/Nienluancoso/login/index");
+                    // $this->view("masterlayout/log", $this->data);
                 } else {
                     $this->data['title'] = "Đăng ký";
                     $this->data['layout'] = "main/register";

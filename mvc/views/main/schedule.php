@@ -1,5 +1,5 @@
 <div>
-    <h3 class="indigo-text text-darken-4 center"><b>Khóa học</b></h3>
+    <h3 class="indigo-text text-darken-4 center"><b>Lịch học</b></h3>
     <div class="row">
         <?php
         foreach ($data['couresschedule'] as $khoahoc) {

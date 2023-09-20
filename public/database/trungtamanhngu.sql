@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 02, 2023 lúc 09:41 PM
+-- Thời gian đã tạo: Th9 20, 2023 lúc 09:56 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -156,7 +156,22 @@ INSERT INTO `hocvien` (`idhv`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALU
 (11, 'tran thanh moi', '2023-08-21', 'ca mau', 'thanh@gmail.com', '087451254'),
 (12, 'tran thanh moi', '2023-08-21', 'ca mau', 'thanh@gmail.com', '087451254'),
 (13, 'tran thanh moi', '2023-08-01', 'ca mau', 'thanh@gmail.com', '0854172887'),
-(14, 'Tran hai dang', '2023-08-01', 'ca mau', 'dang@gmail.com', '0984564214');
+(14, 'Tran hai dang', '2023-08-01', 'ca mau', 'dang@gmail.com', '0984564214'),
+(15, 'Trần Văn Lùn', '2013-03-05', 'Cà Mau', 'moi12@gmail.com', '0254123586'),
+(16, 'Trần Văn Lùn', '2013-03-05', 'Cà Mau', 'moi12@gmail.com', '0254123586'),
+(17, 'Trần văn Bảo', '2002-09-17', 'Cần thơ', 'moiskubidu@gmail.com', '0254789456'),
+(18, 'Trần minh nhựt', '2002-03-22', 'ca mau', 'nhut@gmail.com', '0854126879'),
+(19, 'Trần Kha', '2023-09-03', 'Cần thơ', 'kha@gmail.com', '0254126789'),
+(20, 'Trần ku bo', '2023-09-11', 'Cần thơ', 'kubo@gmail.com', '0254123645'),
+(21, 'Trần Kha', '2023-09-03', 'Cần thơ', 'kha@gmail.com', '0254126789'),
+(22, 'Trung Quân', '2002-02-03', 'Cần thơ', 'quanbaku@gmail.com', '0254126456'),
+(23, 'Trung Quân', '2002-02-03', 'Cần thơ', 'quanbaku@gmail.com', '0254126456'),
+(24, 'Trung Quân', '2002-02-03', 'Cần thơ', 'quanbaku@gmail.com', '0254126456'),
+(25, 'Trung Quân', '2002-02-03', 'Cần thơ', 'quanbaku@gmail.com', '0254126456'),
+(26, 'kabu', '2023-09-18', 'cần thơ', 'kabu@gmail.com', '0214564587'),
+(27, 'Trần trung tinh', '2023-09-11', 'Cần thơ', 'tinh@gmail.com', '0245657889'),
+(28, 'Trung', '2023-09-05', 'Cần thơ', 'thanh@gmail.com', '0854172887'),
+(29, 'Khubu', '2023-09-03', 'cần thơ', 'moib@gmail.com', '0214564587');
 
 -- --------------------------------------------------------
 
@@ -343,7 +358,14 @@ INSERT INTO `tkhocvien` (`id`, `idhv`, `username`, `pass`) VALUES
 (7, 2, 'trung123', 'trung123'),
 (8, 6, 'tinh123', 'tinh123'),
 (9, 13, 'moita', 'moi123'),
-(10, 14, 'moiddk46', 'moi123');
+(10, 14, 'moiddk46', 'moi123'),
+(11, 17, 'moiskubidu', 'moi456'),
+(12, 18, 'moi12', 'nhut789'),
+(13, 19, 'khacu', 'kh123'),
+(14, 22, 'quankutue', 'quan123'),
+(15, 26, 'kabu', 'kabu123'),
+(16, 27, 'tinhtrung', 'tinhtrung123'),
+(17, 29, 'ka', 'ka123');
 
 -- --------------------------------------------------------
 
@@ -493,7 +515,7 @@ ALTER TABLE `giaovien`
 -- AUTO_INCREMENT cho bảng `hocvien`
 --
 ALTER TABLE `hocvien`
-  MODIFY `idhv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idhv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
@@ -529,7 +551,7 @@ ALTER TABLE `tkgiaovien`
 -- AUTO_INCREMENT cho bảng `tkhocvien`
 --
 ALTER TABLE `tkhocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `tuan`

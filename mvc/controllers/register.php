@@ -20,7 +20,7 @@ class register extends Controller
             // $sdt = $_POST['phone'];
             // $password = $_POST['password'];
             if ($this->model("registermodel")->checkbeforeinsert($_POST['username']) == 0) {
-                if ($this->model("registermodel")->addtk($_POST['username'], $_POST['hoten'], $_POST['ngaysinh'], $_POST['diachi'],  $_POST['email'], $_POST['phone'], $_POST['password']) == true) {
+                if ($this->model("registermodel")->addtk($_POST['username'], $_POST['hoten'], $_POST['ngaysinh'], $_POST['diachi'],  $_POST['email'], $_POST['phone'], $_POST['password'],$_POST['phanquyen']) == true) {
                     // $this->data['title'] = "Đăng nhập";
                     // $this->data['layout'] = "main/login";
                     header("location: http://localhost/Nienluancoso/login/index");

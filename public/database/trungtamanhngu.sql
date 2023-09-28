@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 20, 2023 lúc 09:56 AM
+-- Thời gian đã tạo: Th9 28, 2023 lúc 08:12 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -171,7 +171,8 @@ INSERT INTO `hocvien` (`idhv`, `ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALU
 (26, 'kabu', '2023-09-18', 'cần thơ', 'kabu@gmail.com', '0214564587'),
 (27, 'Trần trung tinh', '2023-09-11', 'Cần thơ', 'tinh@gmail.com', '0245657889'),
 (28, 'Trung', '2023-09-05', 'Cần thơ', 'thanh@gmail.com', '0854172887'),
-(29, 'Khubu', '2023-09-03', 'cần thơ', 'moib@gmail.com', '0214564587');
+(29, 'Khubu', '2023-09-03', 'cần thơ', 'moib@gmail.com', '0214564587'),
+(30, 'Trần Thanh Bảo', '2023-09-01', 'cần thơ', 'bao@gmail.com', '0214526578');
 
 -- --------------------------------------------------------
 
@@ -341,31 +342,33 @@ CREATE TABLE `tkhocvien` (
   `id` int(11) NOT NULL,
   `idhv` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `pass` varchar(50) NOT NULL
+  `pass` varchar(50) NOT NULL,
+  `phanquyen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tkhocvien`
 --
 
-INSERT INTO `tkhocvien` (`id`, `idhv`, `username`, `pass`) VALUES
-(1, 1, 'moi123', 'moi123'),
-(2, 5, 'tam123', 'tam123'),
-(3, 3, 'quang123', 'quang123'),
-(4, 4, 'huyen123', 'huyen123'),
-(5, 7, 'quan123', 'quan123'),
-(6, 8, 'nguyen123', 'nguyen123'),
-(7, 2, 'trung123', 'trung123'),
-(8, 6, 'tinh123', 'tinh123'),
-(9, 13, 'moita', 'moi123'),
-(10, 14, 'moiddk46', 'moi123'),
-(11, 17, 'moiskubidu', 'moi456'),
-(12, 18, 'moi12', 'nhut789'),
-(13, 19, 'khacu', 'kh123'),
-(14, 22, 'quankutue', 'quan123'),
-(15, 26, 'kabu', 'kabu123'),
-(16, 27, 'tinhtrung', 'tinhtrung123'),
-(17, 29, 'ka', 'ka123');
+INSERT INTO `tkhocvien` (`id`, `idhv`, `username`, `pass`, `phanquyen`) VALUES
+(1, 1, 'moi123', 'moi123', 2),
+(2, 5, 'tam123', 'tam123', 2),
+(3, 3, 'quang123', 'quang123', 2),
+(4, 4, 'huyen123', 'huyen123', 2),
+(5, 7, 'quan123', 'quan123', 2),
+(6, 8, 'nguyen123', 'nguyen123', 2),
+(7, 2, 'trung123', 'trung123', 2),
+(8, 6, 'tinh123', 'tinh123', 2),
+(9, 13, 'moita', 'moi123', 2),
+(10, 14, 'moiddk46', 'moi123', 2),
+(11, 17, 'moiskubidu', 'moi456', 2),
+(12, 18, 'moi12', 'nhut789', 2),
+(13, 19, 'khacu', 'kh123', 2),
+(14, 22, 'quankutue', 'quan123', 2),
+(15, 26, 'kabu', 'kabu123', 2),
+(16, 27, 'tinhtrung', 'tinhtrung123', 2),
+(17, 29, 'ka', 'ka123', 2),
+(18, 30, 'mavasi', 'bao123', 2);
 
 -- --------------------------------------------------------
 
@@ -515,7 +518,7 @@ ALTER TABLE `giaovien`
 -- AUTO_INCREMENT cho bảng `hocvien`
 --
 ALTER TABLE `hocvien`
-  MODIFY `idhv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idhv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
@@ -551,7 +554,7 @@ ALTER TABLE `tkgiaovien`
 -- AUTO_INCREMENT cho bảng `tkhocvien`
 --
 ALTER TABLE `tkhocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `tuan`

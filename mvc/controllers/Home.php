@@ -8,6 +8,12 @@ class Home extends Controller{
 
         $this->view("masterlayout/sinhvien", $this->data);
     }
+    public function admin(){
+        $this->data['title'] = "Trang chủ";
+        $this->data['layout'] = "main/home_admin";
+
+        $this->view("masterlayout/admin", $this->data);
+    }
     
 }
 ?>

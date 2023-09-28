@@ -18,21 +18,19 @@ class login extends Controller
         // $this->data['password'] = $password = isset($_POST['password']) ? addslashes($_POST['password']) : '';
         if (isset($_POST['submit'])) {
             if ($this->model("loginmodel")->checktk($_POST['username'], $_POST['password']) == 1) {
-                $_SESSION['username'] =  $_POST['username'];
-                $this->data['title'] = "Trang chủ";
-                $this->data['layout'] = "admin/home";
+                // $this->data['title'] = "Trang chủ";
+                // $this->data['layout'] = "admin/home";
 
-                $this->view("masterlayout/admin", $this->data);
+                // $this->view("masterlayout/admin", $this->data);
+                header("location: http://localhost/Nienluancoso/home/admin");
             } else {
                 if ($this->model("loginmodel")->checktk($_POST['username'], $_POST['password']) == 2) {
-                    $_SESSION['username'] =  $_POST['username'];
                     $this->data['title'] = "Trang chủ";
                     $this->data['layout'] = "teacher/home";
 
                     $this->view("masterlayout/teacher", $this->data);
                 } else {
                     if ($this->model("loginmodel")->checktk($_POST['username'], $_POST['password']) == 3) {
-                        $_SESSION['username'] =  $_POST['username'];
                         $this->data['title'] = "Trang chủ";
                         $this->data['layout'] = "main/home";
 
@@ -54,8 +52,9 @@ class login extends Controller
     }
     public function logout()
     {
-        if (isset($_SESSION["username"])) {
+        if (isset($_SESSION["username"])&& isset($_SESSION["phanquyen"])) {
             unset($_SESSION["username"]);
+            unset($_SESSION["phanquyen"]);
         }
         $this->data['title'] = "Trang chủ";
         $this->data['layout'] = "main/home";

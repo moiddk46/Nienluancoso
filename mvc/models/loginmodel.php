@@ -12,6 +12,9 @@ class loginmodel extends connect
         // $tk = $sth->fetch();
         // echo $tk['username'];
         if ($sth->rowcount() == 1) {
+            $tk = $sth->fetch();
+            $_SESSION['username'] = $username;
+            $_SESSION['phanquyen'] = $tk['phanquyen'];
             return 3;
         } else {
             $query1 = "SELECT * FROM tkgiaovien WHERE username=? AND pass=?";
@@ -23,9 +26,13 @@ class loginmodel extends connect
             if($sth1->rowCount() == 1){
                 $tk2 = $sth1->fetch();
                 if($tk2['phanquyen']==0){
+                    $_SESSION['username'] = $username;
+                    $_SESSION['phanquyen'] = $tk2['phanquyen'];
                     // echo "1";
                     return 1;
                 }else{
+                    $_SESSION['username'] = $username;
+                    $_SESSION['phanquyen'] = $tk2['phanquyen'];
                     return 2;
                     // echo "2";
                 }

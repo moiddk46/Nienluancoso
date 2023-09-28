@@ -59,6 +59,7 @@
                 <label class="indigo-text" for="password1">Nhập lại mật khẩu</label>
             </div>
         </div>
+        <input type="hidden" name="phanquyen" value="2">
         <divm class="row">
             <button class="btn waves-effect waves-light indigo col s12" type="submit" name="register">Đăng ký
             </button>

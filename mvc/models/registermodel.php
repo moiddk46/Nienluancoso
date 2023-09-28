@@ -21,7 +21,7 @@ class registermodel extends connect
         return 0;
     }
 
-    public function addtk($username, $hoten, $ngaysinh, $diachi, $email, $sdt, $password)
+    public function addtk($username, $hoten, $ngaysinh, $diachi, $email, $sdt, $password,$phanquyen)
     {
         $query = "INSERT INTO `hocvien`(`ten`, `ngaysinh`, `diachi`, `email`, `sdt`) VALUES (?,?,?,?,?)";
         $sth = $this->pdo->prepare($query);
@@ -41,12 +41,13 @@ class registermodel extends connect
             ]);
             if ($sth1->rowCount() == 1) {
                 $hocvien = $sth1->fetch();
-                $query2="INSERT INTO tkhocvien(`idhv`,`username`,`pass`) VALUES (?,?,?)";
+                $query2="INSERT INTO tkhocvien(`idhv`,`username`,`pass`,`phanquyen`) VALUES (?,?,?,?)";
                 $sth2= $this->pdo->prepare($query2);
                 $sth2->execute([
                     $hocvien['idhv'],
                     $username,
-                    $password
+                    $password,
+                    $phanquyen
                 ]);
                 if($sth2->rowCount()==1){
                     return true;

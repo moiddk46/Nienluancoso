@@ -26,7 +26,7 @@
                     <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/schedule/couresschedule"><b>Lịch học</b></a></li>
                     <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="#"><b>Liên hệ</b></a></li>
                     <?php
-                    if (isset($_SESSION['username'])) {
+                    if (isset($_SESSION['username'])&&($_SESSION['phanquyen']==2)) {
                     ?>
                         <li><a class="waves-effect waves-light btn indigo dropdown-trigger" data-target="dropdown1"><i class="material-icons center">portrait</i></a></li>
 

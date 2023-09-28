@@ -97,3 +97,66 @@ body{
 .or-custom{
     margin-top: 30px;
 }
+
+.list-li {
+    position: relative;
+    margin: 20px;
+}
+
+.list-li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+}
+
+/* .actived::before{
+    content: '';
+    position: absolute;
+    background-color: azure;
+    width: 3px;
+} */
+
+/* .list-li a.actived::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: white;
+}
+.list-li a.actived:hover::before{
+    width: 45%;
+    transition: 0.5s;
+} */
+.list-li:hover::before{
+    width: 100%;
+    transition: 0.5s;
+}
+/* .list-li a.actived::before{
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+} */
+a.actived::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+
+}
+.icon-admin{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.logout-admin{
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+}

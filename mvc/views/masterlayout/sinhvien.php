@@ -24,16 +24,16 @@
                     <li class="<?php if ($data['title'] == 'Trang chủ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/home/index"><b>Trang chủ</b></a></li>
                     <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/coures/coures"><b>Khóa học</b></a></li>
                     <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/schedule/couresschedule"><b>Lịch học</b></a></li>
-                    <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="#"><b>Liên hệ</b></a></li>
+                    <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a class="indigo-text text-darken-4" href="/Nienluancoso/home/contact"><b>Liên hệ</b></a></li>
                     <?php
-                    if (isset($_SESSION['username'])&&($_SESSION['phanquyen']==2)) {
+
+                    if (isset($_SESSION['username']) && ($_SESSION['phanquyen'] == 2)) {
                     ?>
-                        <li><a class="waves-effect waves-light btn indigo dropdown-trigger" data-target="dropdown1"><i class="material-icons center">portrait</i></a></li>
+                        <li><a class="waves-effect waves-light btn transparent indigo-text dropdown-trigger" data-target="dropdown1">Xin chào! <?php echo $_SESSION['tenhv'];?></a></li>
 
                         <!-- Dropdown Structure -->
                         <ul id='dropdown1' class='dropdown-content row'>
-                            <li><a class="indigo-text" href="#!">Thông tin tài khoản</a></li>
-                            <li><a class="indigo-text" href="#!">Xóa tài khoản</a></li>
+                            <li><a class="indigo-text" href="/Nienluancoso/home/viewinfor">Thông tin tài khoản</a></li>
                             <li><a class="indigo-text" href="/Nienluancoso/login/logout">Đăng xuất</a></li>
                         </ul>
                     <?php
@@ -49,9 +49,9 @@
         </nav>
         <ul class="sidenav grey lighten-5" id="mobile-demo">
             <li class="<?php if ($data['title'] == 'Trang chủ') echo "active"; ?>"><a href="/Nienluancoso/home/index">Trang chủ</a></li>
-            <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a href="/Nienluancoso/home/coures">Khóa học</a></li>
-            <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a href="#">Lịch học</a></li>
-            <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a href="#">Liên hệ</a></li>
+            <li class="<?php if ($data['title'] == 'Khóa học') echo "active"; ?>"><a href="/Nienluancoso/coures/coures">Khóa học</a></li>
+            <li class="<?php if ($data['title'] == 'Lịch học') echo "active"; ?>"><a href="/Nienluancoso/schedule/couresschedule">Lịch học</a></li>
+            <li class="<?php if ($data['title'] == 'Liên hệ') echo "active"; ?>"><a href="/Nienluancoso/home/contact">Liên hệ</a></li>
         </ul>
         <!-- </div> -->
     </header>
@@ -66,15 +66,15 @@
                 <div class="col l6 s12 indigo-text">
                     <h5 class="center"><img src="http://localhost/Nienluancoso/public/img/logo.png" alt="loianh"></h5>
                     <p class="">Trung tâm Anh ngữ Cần Thơ - OCEAN luôn không ngừng phát triển và cố gắng mang lại những phương pháp học tập tối ưu nhất dành cho tất cả các học viên đến với trung tâm.</p>
-                    <p class="">Địa chỉ: 208 Nguyễn Việt Hồng, P. An Phú, Q. Ninh Kiều, TP. Cần Thơ. ĐT: 0854 172 887</p>
+                    <p class="">Địa chỉ: 58 Ba tháng hai, P. Hưng lợi, Q. Ninh Kiều, TP. Cần Thơ. ĐT: 0854 172 887</p>
                 </div>
                 <div class="footer-custom col l4 offset-l2 s12">
                     <h5 class="indigo-text text-darken-4"><b>Về OCEAN</b></h5>
                     <ul>
                         <li><a class="a-custom-header" href="/Nienluancoso/home/index">Trang chủ</a></li>
-                        <li><a class="a-custom-header" href="/Nienluancoso/home/coures">Khóa học</a></li>
-                        <li><a class="a-custom-header" href="#!">Lịch học</a></li>
-                        <li><a class="a-custom-header" href="#!">Liên hệ</a></li>
+                        <li><a class="a-custom-header" href="/Nienluancoso/coures/coures">Khóa học</a></li>
+                        <li><a class="a-custom-header" href="/Nienluancoso/schedule/couresschedule">Lịch học</a></li>
+                        <li><a class="a-custom-header" href="/Nienluancoso/home/contact">Liên hệ</a></li>
                     </ul>
                     <div class="row">
                         <a class="col" href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-xl" style="color: #0860f7;"></i></a>
@@ -101,6 +101,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="http://localhost/Nienluancoso/public/javascript/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
 </body>
 
 </html>

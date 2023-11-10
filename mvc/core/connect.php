@@ -2,7 +2,7 @@
 class connect{
     public $pdo;
     private $localhost= "localhost";
-    private $name = "trungtamanhngu";
+    private $name = "oceanenglishcenter";
     private $username="root";
     private $pass="";
     

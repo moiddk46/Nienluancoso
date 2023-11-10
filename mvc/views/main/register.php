@@ -1,11 +1,19 @@
 <div class="row alert-custom-register">
     <?php
     if (isset($data['register'])) {
-        if ($data['register'] == 0) {
+        if ($data['register'] == 1) {
     ?>
             <div class="alert card red white-text top">
                 <div class="card-content center">
-                    <p><i class="material-icons left">report</i><span>Tài khoản đã tồn tại:</span> Vui lòng kiểm tra lại.</p>
+                    <p><i class="material-icons left">report</i><span>Tên đăng nhập đã tồn tại</span></p>
+                </div>
+            </div>
+        <?php
+        } else {
+        ?>
+        <div class="alert card red white-text top">
+                <div class="card-content center">
+                    <p><i class="material-icons left">report</i><span>Email đã tồn tại</span></p>
                 </div>
             </div>
     <?php
@@ -34,10 +42,17 @@
                 <input id="ngaysinh" type="text" class="datepicker" name="ngaysinh" required>
                 <label class="indigo-text" for="ngaysinh">Ngày sinh</label>
             </div>
-            <div class="input-field col s6">
-                <input id="diachi" type="text" class="validate" name="diachi" required>
-                <label class="indigo-text" for="diachi">Địa chỉ</label>
+            <div class="col s6">
+                <label class="col s6 mt-4">
+                    <input type="radio" name="gioitinh" value="NAM" />
+                    <span>Nam</span>
+                </label>
+                <label class="col s6 mt-4">
+                    <input type="radio" name="gioitinh" value="NU" />
+                    <span>Nữ</span>
+                </label>
             </div>
+
         </div>
         <div class="row">
             <div class="input-field col s6">
@@ -45,8 +60,8 @@
                 <label class="indigo-text" for="email">Email</label>
             </div>
             <div class="input-field col s6">
-                <input id="telephone" type="tel" class="validate" name="phone">
-                <label class="indigo-text" for="telephone">Số điện thoại</label>
+                <input id="quequan" type="text" class="validate" name="quequan" required>
+                <label class="indigo-text" for="quequan">Quê quán</label>
             </div>
         </div>
         <div class="row">
@@ -60,13 +75,14 @@
             </div>
         </div>
         <input type="hidden" name="phanquyen" value="2">
-        <divm class="row">
+        <div class="row">
             <button class="btn waves-effect waves-light indigo col s12" type="submit" name="register">Đăng ký
             </button>
             <div class="indigo-text text-darken-4 or-custom"><b>hoặc</b></div>
-            <div class="button-dangky">
+            <div class="button-dangky row">
                 <a href="/Nienluancoso/login/index">Đăng nhập</a>
+                <a href="/Nienluancoso/home/index">Quay lại</a>
             </div>
-</div>
-</form>
+        </div>
+    </form>
 </div>

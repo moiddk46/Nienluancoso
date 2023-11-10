@@ -8,14 +8,14 @@
                     <p><i class="material-icons left">report</i><span>Đăng nhập thất bại:</span> Vui lòng kiểm tra lại.</p>
                 </div>
             </div>
-    <?php
+        <?php
         }
     }
     ?>
 </div>
 <div class="row form-custom center">
     <h5 class="indigo-text text-darken-4"><b>Đăng nhập</b></h5>
-    <form class="col s12" action="check" method="POST">
+    <form class="col s12" action="../login/check" method="POST">
         <div class="row">
             <div class="input-field col s12">
                 <input id="name" type="text" class="validate" name="username" required>
@@ -35,6 +35,7 @@
             <p class="indigo-text text-darken-4"><b>hoặc</b></p>
             <div class="button-dangky">
                 <a href="/Nienluancoso/register/index">Đăng ký ?</a>
+                <a href="/Nienluancoso/home/index">Quay lại</a>
             </div>
         </div>
     </form>

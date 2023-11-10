@@ -2,13 +2,6 @@
 class admin extends Controller
 {
     public $data = [];
-    // public function __construct()
-    // {
-    //     unset($_SESSION['inforgv']);
-    //     if (isset($_SESSION['username']) && $_SESSION['phanquyen'] == 0) {
-    //         $_SESSION['inforgv'] = $this->model("teachermodel")->getgv($_SESSION['username']);
-    //     }
-    // }
     public function index()
     {
         $this->data['title'] = "Trang chủ";
